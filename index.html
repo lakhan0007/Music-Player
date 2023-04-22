@@ -1,51 +1,95 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Library</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="styleheader.css" />
+    <link rel="stylesheet" href="stylefooter.css" />
+    <title>Music Playlist</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- Start Header  -->
-    <div class="menu-bar">
-        <h1 class="logo">WEB<span>TRACK</span></h1>
-        <ul>
+    <!-- Paste here -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  <body>
+   
+<!-- Start Header  -->
+<div class="menu-bar">
+  <h1 class="logo">WEB<span>TRACK</span></h1>
+      <ul>
           <li><a href="#">Home</a></li>
-          
-          <li><a href="https://lakhan0007.github.io/Social/" target="_blank">About</a></li>
-          
-        </ul>
-      </div>
+          <li>  <a href="https://lakhan0007.github.io/Social/" target="_blank">About</a></li>
+    
+      </ul>
+</div>
 <!-- End of Header -->
 
-    <main>
-        <div>
-            <a onclick="playsong()" ondblclick="pausesong()">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
-            </a>
+    <!-- MAIN START -->
+    <div class="body">
+    <div class="wrapper">
+      <div class="top-bar">
+        <i class="material-icons">expand_more</i>
+        <span>Now Playing</span>
+        <i class="material-icons">more_horiz</i>
+      </div>
+      <div class="img-area">
+        <img src="" alt="">
+      </div>
+      <div class="song-details">
+        <p class="name"></p>
+        <p class="artist"></p>
+      </div>
+      <div class="progress-area">
+        <div class="progress-bar">
+          <audio id="main-audio" src=""></audio>
         </div>
-    </main>
-
-
-        <!-- footer start -->
-<footer class="footer-class">
-    <p class="copyright">© L . S . Rathore 2022</p>
-    <div class="footer">
-      <a class="icon icon--twitter" href="https://twitter.com/lakhans32788596" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a class="icon icon--linkedin" href="https://www.linkedin.com/in/lakhan-singh-rathore-10a283235/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a class="icon icon--github" href="https://github.com/lakhan0007" target="_blank"><i class="fab fa-github"></i></a>
-      <!-- <a class="icon icon--instagram" href="https://www.instagram.com/dushyant_26850/" target="_blank"><i class="fab fa-instagram"></i></a> -->
-      <a class="icon icon--facebook" href="https://www.facebook.com/profile.php?id=100079728271245" target="_blank"><i class="fab fa-facebook"></i></a>
+        <div class="song-timer">
+          <span class="current-time">0:00</span>
+          <span class="max-duration">0:00</span>
+        </div>
+      </div>
+      <div class="controls">
+        <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
+        <i id="prev" class="material-icons">skip_previous</i>
+        <div class="play-pause">
+          <i class="material-icons play">play_arrow</i>
+        </div>
+        <i id="next" class="material-icons">skip_next</i>
+        <i id="more-music" class="material-icons">queue_music</i>
+      </div>
+      <div class="music-list">
+        <div class="header">
+          <div class="row">
+            <i class= "list material-icons">queue_music</i>
+            <span>Music list</span>
+          </div>
+          <i id="close" class="material-icons">close</i>
+        </div>
+        <ul>
+          <!-- here li list are coming from js -->
+        </ul>
+      </div>
     </div>
-  </footer>
-  <!-- footer end -->
+  </div>
 
 
-    <script src="script.js"></script>
-</body>
+    
+    <!-- MAIN END -->
+
+   <!-- footer start -->
+<footer class="footer-class">
+  <p class="copyright">© L . S . Rathore 2022</p>
+  <div class="footer">
+    <a class="icon icon--twitter" href="https://twitter.com/lakhans32788596" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a class="icon icon--linkedin" href="https://www.linkedin.com/in/lakhan-singh-rathore-10a283235/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a class="icon icon--github" href="https://github.com/lakhan0007" target="_blank"><i class="fab fa-github"></i></a>
+    <!-- <a class="icon icon--instagram" href="https://www.instagram.com/dushyant_26850/" target="_blank"><i class="fab fa-instagram"></i></a> -->
+    <a class="icon icon--facebook" href="https://www.facebook.com/profile.php?id=100079728271245" target="_blank"><i class="fab fa-facebook"></i></a>
+  </div>
+</footer>
+<!-- footer end -->
+
+      <!-- Add javascript -->
+      <script src="js/music-list.js"></script>
+      <script src="js/script.js"></script>
+  </body>
 </html>
